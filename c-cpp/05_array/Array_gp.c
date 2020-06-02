@@ -1,4 +1,4 @@
-#include "Array.h"
+#include "Array_gp.h"
 
 #include <string.h>
 #include <stdbool.h>
@@ -29,7 +29,7 @@ Array* arrayCreate()
 // 给结构的数组指针p申请数组内存
 // size: 申请多少个元素
 // typeSize： 每个元素的大小
-voi darrayInit(Array *array, int size, int typeSize)
+void arrayInit(Array *array, int size, int typeSize)
 {
     if (NULL == array
         || typeSize <= 0
