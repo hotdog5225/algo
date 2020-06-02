@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+# ctags file
+tags
+
 # Log file
 *.log
 
