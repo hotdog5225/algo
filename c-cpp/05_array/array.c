@@ -22,6 +22,7 @@ void alloc(struct array *array)
     array->arr = (int *)malloc(array->size * sizeof(int));
 }
 
+// 按值查找
 int insert(struct array *array, int elem)
 {
     int idx;
@@ -39,6 +40,7 @@ int insert(struct array *array, int elem)
     // 如果找不到（要插入的元素比数组所有元素都大）, idx == array->arr
     // 将所有elem大的元素，向后移一个位置,空出elem的位置
     if (idx < array->used)
+        // memmove 可以内存重叠
         memmove(&array->arr[idx+1], &array->arr[idx],
             (array->used - idx) * sizeof(int));
 
@@ -47,6 +49,7 @@ int insert(struct array *array, int elem)
     return idx;
 }
 
+// idx从0开始
 int delete(struct array *array, int idx)
 {
     if (idx < 0 || idx >= array->used)

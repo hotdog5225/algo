@@ -53,6 +53,7 @@ void arrayInit(Array *array, int size, int typeSize)
 }
 
 // 将元素插入到指定位置
+// pos从1开始
 int arrayInsert(Array *array, size_t pos, void *const value)
 {
     if (NULL == array)
@@ -85,6 +86,7 @@ int arrayInsert(Array *array, size_t pos, void *const value)
         }
         else
         {
+            // memcpy不能够有重叠
             memcpy(pNew, pOld, array->typeSize);
         }
     }
