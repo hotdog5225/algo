@@ -13,9 +13,11 @@ for($i=0;$i<9;$i++) {
 $myArr1->printData();
 
 $code = $myArr1->insert(6, 999);
+//meme 双引号字符串插入，变量用{}括起来
 echo "insert at 6: code:{$code}\n";
 $myArr1->printData();
 
+//meme 用list接收函数返回的多个值
 list($code, $value) = $myArr1->delete(6);
 echo "delete at 6: code:{$code}, value:{$value}\n";
 $myArr1->printData();

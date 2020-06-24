@@ -50,6 +50,7 @@ class MyArray
      * @param $index
      * @return bool
      */
+    //meme 不需要暴露的函数，都用private
     private function checkOutOfRange($index)
     {
         if($index >= $this->length) {
@@ -68,7 +69,7 @@ class MyArray
     {
         $index = intval($index);
         $value = intval($value);
-        if ($index < 0) {
+        if ($index < 0 || $index >= $this->capacity) {
             return 1;
         }
 
@@ -108,6 +109,7 @@ class MyArray
             $this->data[$i] = $this->data[$i + 1];
         }
         $this->length--;
+        //meme 利用数组返回多个值
         return [0, $value];
     }
 
