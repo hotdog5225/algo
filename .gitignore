@@ -52,3 +52,7 @@ bld/
 **/*.idea
 **/*.iml
 **/*out
+
+# clion
+cmake-build-debug/
+CMakeLists.txt
