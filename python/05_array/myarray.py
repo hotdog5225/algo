@@ -25,8 +25,7 @@ class MyArray:
         return len(self._data)
 
     def __iter__(self):
-        for item in self._data:
-            yield item
+        return iter(self._data)
 
     def find(self, index: int) -> object:
         try:
@@ -59,10 +58,12 @@ def test_myarray():
     array.insert(1, 5)
     array.insert(3, 9)
     array.insert(3, 10)
-    assert array.insert(0, 100) is False
+    # 数组满了
+    array.print_all()
+    assert array.insert(0, 100) is False # 数组满了，插入失败
     assert len(array) == 5
     assert array.find(1) == 5
-    assert array.delete(4) is True
+    assert array.delete(4) is True # 删除下标为4的元素
     array.print_all()
 
 
